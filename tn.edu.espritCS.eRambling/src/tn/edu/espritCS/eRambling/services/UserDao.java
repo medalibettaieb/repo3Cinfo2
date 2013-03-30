@@ -43,7 +43,6 @@ public class UserDao {
 		ResultSet resultSet;
 		try {
 
-			System.out.println(sql);
 			statement = connection.createStatement();
 			resultSet = statement.executeQuery(sql);
 
@@ -63,6 +62,23 @@ public class UserDao {
 	public Statement getStatement() throws SQLException {
 		statement = connection.createStatement();
 		return statement;
+	}
+
+	public boolean updateUser(User userModel) {
+		boolean b = false;
+		String sql = "update user set firstNameUser= '"
+				+ userModel.getFirstNameUser() + "' , lastNameUser='"
+				+ userModel.getLastNameUser() + "' where idUser = "
+				+ userModel.getIdUser();
+
+		try {
+			getStatement().executeUpdate(sql);
+			b = true;
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return b;
 	}
 
 }
