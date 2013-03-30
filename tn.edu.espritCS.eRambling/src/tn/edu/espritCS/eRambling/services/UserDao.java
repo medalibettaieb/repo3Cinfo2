@@ -81,4 +81,19 @@ public class UserDao {
 		return b;
 	}
 
+
+	public boolean deleteUserByIdUser(int idUser) {
+		boolean b = false;
+		String sql = "delete user where idUser = " + idUser;
+
+		try {
+			getStatement().executeUpdate(sql);
+			b = true;
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return b;
+	}
+
 }

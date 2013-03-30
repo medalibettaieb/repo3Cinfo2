@@ -47,4 +47,10 @@ public class TestManageUser {
 		Assert.assertTrue(userDao.updateUser(userModel));
 	}
 
+
+	@Test
+	public void testDeleteUserByIdUser() {
+		Assert.assertTrue(userDao.deleteUserByIdUser(1));
+	}
+
 }
