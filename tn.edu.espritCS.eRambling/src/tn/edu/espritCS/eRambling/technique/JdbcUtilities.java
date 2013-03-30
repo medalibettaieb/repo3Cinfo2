@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import tn.edu.espritCS.eRambling.persistence.User;
+
 public class JdbcUtilities {
 	private Connection connection;
 
@@ -29,4 +31,5 @@ public class JdbcUtilities {
 		return connection;
 	}
 
+	
 }

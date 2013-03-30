@@ -10,16 +10,17 @@ import tn.edu.espritCS.eRambling.technique.JdbcUtilities;
 
 public class TestManageUser {
 
+	private JdbcUtilities jdbcUtilities = new JdbcUtilities();
+	private UserDao userDao = new UserDao();
+
 	@Test
 	public void testAddUser() {
 		// creation of the entity
 		User user = new User();
-	
 		user.setFirstNameUser("foulen");
 		user.setLastNameUser("ben foulen");
 
 		// creation of the dao Class
-		UserDao userDao = new UserDao();
 
 		Assert.assertEquals(true, userDao.addUser(user));
 	}
@@ -28,5 +29,12 @@ public class TestManageUser {
 	public void testHatliConnection() {
 		JdbcUtilities jdbcUtilities = new JdbcUtilities();
 		Assert.assertEquals("", jdbcUtilities.hatliConnectionMrigla());
+	}
+
+	@Test
+	public void testFindUserByIdUser() {
+
+		Assert.assertEquals("ff", userDao.findUserByIdUser(1)
+				.getFirstNameUser());
 	}
 }
