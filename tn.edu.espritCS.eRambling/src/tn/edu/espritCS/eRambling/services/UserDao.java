@@ -84,7 +84,7 @@ public class UserDao {
 
 	public boolean deleteUserByIdUser(int idUser) {
 		boolean b = false;
-		String sql = "delete user where idUser = " + idUser;
+		String sql = "delete from user where idUser = " + idUser;
 
 		try {
 			getStatement().executeUpdate(sql);
