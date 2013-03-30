@@ -37,4 +37,14 @@ public class TestManageUser {
 		Assert.assertEquals("ff", userDao.findUserByIdUser(1)
 				.getFirstNameUser());
 	}
+
+	@Test
+	public void testUpdateUser() {
+		User userModel = userDao.findUserByIdUser(1);
+		userModel.setFirstNameUser("new ");
+		userModel.setLastNameUser("new ");
+
+		Assert.assertTrue(userDao.updateUser(userModel));
+	}
+
 }
