@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import tn.edu.espritCS.eRambling.persistence.User;
 import tn.edu.espritCS.eRambling.technique.JdbcUtilities;
@@ -68,7 +70,8 @@ public class UserDao {
 		boolean b = false;
 		String sql = "update user set firstNameUser= '"
 				+ userModel.getFirstNameUser() + "' , lastNameUser='"
-				+ userModel.getLastNameUser() + "' where idUser = "
+				+ userModel.getLastNameUser() + "', fkGroup="
+				+ userModel.getRefGroup() + " where idUser = "
 				+ userModel.getIdUser();
 
 		try {
@@ -80,7 +83,6 @@ public class UserDao {
 		}
 		return b;
 	}
-
 
 	public boolean deleteUserByIdUser(int idUser) {
 		boolean b = false;
@@ -94,6 +96,36 @@ public class UserDao {
 			e.printStackTrace();
 		}
 		return b;
+	}
+
+	public List<User> findAllUsers() {
+		
+		List<User> users = new ArrayList<User>();
+		
+		String sql = "select * from user";
+
+		ResultSet resultSet;
+		int i;
+		User user = new User();
+		try {
+
+			statement = connection.createStatement();
+			resultSet = statement.executeQuery(sql);
+
+			while(resultSet.next()){
+				 i = resultSet.getInt("idUser");
+				 user = findUserByIdUser(i);
+				 users.add(user);
+
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return users;
+		
+		
 	}
 
 }

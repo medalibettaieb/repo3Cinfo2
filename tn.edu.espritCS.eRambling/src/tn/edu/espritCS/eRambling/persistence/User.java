@@ -5,10 +5,25 @@ public class User {
 	private int idUser;
 	private String firstNameUser;
 	private String lastNameUser;
+	private int refGroup;
 
 	public int getIdUser() {
 		return idUser;
 	}
+
+
+
+	public int getRefGroup() {
+		return refGroup;
+	}
+
+
+
+	public void setRefGroup(int refGroup) {
+		this.refGroup = refGroup;
+	}
+
+
 
 	public void setIdUser(int idUser) {
 		this.idUser = idUser;

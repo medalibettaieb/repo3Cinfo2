@@ -52,5 +52,10 @@ public class TestManageUser {
 	public void testDeleteUserByIdUser() {
 		Assert.assertTrue(userDao.deleteUserByIdUser(1));
 	}
+	
+	@Test
+	public void testFindAllUsers(){
+		Assert.assertEquals(1, userDao.findAllUsers().size());
+	}
 
 }
