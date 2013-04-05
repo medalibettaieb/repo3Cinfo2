@@ -17,6 +17,28 @@ public class TestRealPlateForm {
 		
 	}
 	
+	@Test
+	public void testAssignUserToGroup(){
+		Assert.assertTrue(groupDao.assignUserToGroup(3,5));
+		
+	}
+	
+	@Test
+	public void testFindAllGroups(){
+		Assert.assertEquals(3, groupDao.findAllGroups().size());
+	}
+	
+	@Test
+	public void testLeaveGroup(){
+		Assert.assertTrue(groupDao.leaveGroup(3));
+		
+	}
+	
+	@Test
+	public void testProposeRambling(){
+		Assert.assertTrue(groupDao.proposeRambling("Rafraf",4));
+	}
+	
 	
 	
 	
