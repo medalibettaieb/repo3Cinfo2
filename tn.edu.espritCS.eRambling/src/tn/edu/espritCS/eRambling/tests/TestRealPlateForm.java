@@ -1,5 +1,7 @@
 package tn.edu.espritCS.eRambling.tests;
 
+import java.sql.SQLException;
+
 import junit.framework.Assert;
 
 import org.junit.Test;
@@ -36,8 +38,24 @@ public class TestRealPlateForm {
 	
 	@Test
 	public void testProposeRambling(){
-		Assert.assertTrue(groupDao.proposeRambling("Rafraf",4));
+		Assert.assertTrue(groupDao.proposeRambling("Rafraf",2));
 	}
+	
+	@Test
+	public void testDisplayRamblingByGroup(){
+		Assert.assertEquals(2, groupDao.displayRamblingByGroup(4).size());
+	}
+	
+	@Test
+	public void testVote() throws SQLException{
+		Assert.assertTrue(groupDao.vote(3,"ok",2));
+	}
+	
+	@Test
+	public void testDisplayFinalDestination(){
+		Assert.assertEquals(1, groupDao.displayFinalDestination(4));
+	}
+	
 	
 	
 	

@@ -5,6 +5,7 @@ import junit.framework.Assert;
 import org.junit.Test;
 
 import tn.edu.espritCS.eRambling.persistence.User;
+import tn.edu.espritCS.eRambling.services.GroupDao;
 import tn.edu.espritCS.eRambling.services.UserDao;
 import tn.edu.espritCS.eRambling.technique.JdbcUtilities;
 
@@ -57,5 +58,6 @@ public class TestManageUser {
 	public void testFindAllUsers(){
 		Assert.assertEquals(1, userDao.findAllUsers().size());
 	}
+	
 
 }
