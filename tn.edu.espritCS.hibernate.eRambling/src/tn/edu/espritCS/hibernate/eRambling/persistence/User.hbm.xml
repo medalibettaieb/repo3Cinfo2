@@ -14,5 +14,11 @@
         <property name="lastNameUser" type="java.lang.String">
             <column name="LASTNAMEUSER" />
         </property>
+        <many-to-one name="group" column="FK_GROUP" class="tn.edu.espritCS.hibernate.eRambling.persistence.Group"></many-to-one>
+        <bag name="ramblings">
+        <key column="FK_USER"></key>
+        <one-to-many class="tn.edu.espritCS.hibernate.eRambling.persistence.Rambling"/>
+        </bag>
+        
     </class>
 </hibernate-mapping>

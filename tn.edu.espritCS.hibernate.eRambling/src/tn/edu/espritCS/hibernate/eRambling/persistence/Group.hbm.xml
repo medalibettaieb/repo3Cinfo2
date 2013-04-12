@@ -14,5 +14,9 @@
         <property name="dateGroup" type="java.util.Date">
             <column name="DATEGROUP" />
         </property>
+        <bag name="users">
+        <key><column name="FK_GROUP"></column></key>
+        <one-to-many class="tn.edu.espritCS.hibernate.eRambling.persistence.User"/>
+        </bag>
     </class>
 </hibernate-mapping>

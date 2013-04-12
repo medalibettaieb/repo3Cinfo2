@@ -11,5 +11,7 @@
         <property name="state" type="java.lang.String">
             <column name="STATE" />
         </property>
+        <many-to-one name="rambling" class="tn.edu.espritCS.hibernate.eRambling.persistence.Rambling" column="FK_RAMBLING"></many-to-one>
+        <many-to-one name="user" class="tn.edu.espritCS.hibernate.eRambling.persistence.User"></many-to-one>
     </class>
 </hibernate-mapping>

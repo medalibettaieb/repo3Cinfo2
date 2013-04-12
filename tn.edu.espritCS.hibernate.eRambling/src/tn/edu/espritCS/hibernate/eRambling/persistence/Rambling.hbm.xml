@@ -11,5 +11,10 @@
         <property name="destianation" type="java.lang.String">
             <column name="DESTIANATION" />
         </property>
+        <many-to-one name="user" column="FK_USER" class="tn.edu.espritCS.hibernate.eRambling.persistence.User"></many-to-one>
+        <bag name="votes">
+        <key column="FK_RAMBLING"></key>
+        <one-to-many class="tn.edu.espritCS.hibernate.eRambling.persistence.Vote"/>
+        </bag>
     </class>
 </hibernate-mapping>

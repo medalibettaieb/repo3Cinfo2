@@ -8,13 +8,17 @@ import org.hibernate.Session;
 import org.junit.Test;
 
 import tn.edu.espritCS.hibernate.eRambling.persistence.User;
+import tn.edu.espritCS.hibernate.eRambling.services.GroupDao;
 import tn.edu.espritCS.hibernate.eRambling.services.UserDao;
 import tn.edu.espritCS.hibernate.eRambling.technique.UtileHibernate;
 
 public class TestRealPlatforme {
 	
 	private UserDao userDao = new UserDao();
-	private Session session =UtileHibernate.getSession(); 
+
+	private Session session =UtileHibernate.getSession();
+
+	private GroupDao groupDao = new GroupDao(); 
 
 	@Test
 	public void testGetSession() {
@@ -51,6 +55,25 @@ public class TestRealPlatforme {
 		
 	}
 	
+	@Test
+	public void testDeleteUser(){
+		
+		session.getTransaction().begin();
+		try {
+			userDao.delete(1);
+			session.getTransaction().commit();
+			
+		} catch (Exception e) {
+			session.getTransaction().rollback();
+		}		
+	}
+	
+	@Test
+	public void testOrganiseGroup(){
+		Assert.assertTrue(groupDao .initDB());
+		
+		
+	}
 	
 
 }

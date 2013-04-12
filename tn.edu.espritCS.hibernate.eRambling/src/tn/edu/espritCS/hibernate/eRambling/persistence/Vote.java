@@ -4,6 +4,9 @@ public class Vote {
 	
 	private int idVote;
 	private String state;
+	
+	private Rambling rambling;
+	private User user;
 
 	public Vote(int idVote, String state) {
 		
@@ -25,6 +28,18 @@ public class Vote {
 	}
 	public void setState(String state) {
 		this.state = state;
+	}
+	public Rambling getRambling() {
+		return rambling;
+	}
+	public void setRambling(Rambling rambling) {
+		this.rambling = rambling;
+	}
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	

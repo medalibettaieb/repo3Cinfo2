@@ -1,6 +1,7 @@
 package tn.edu.espritCS.hibernate.eRambling.persistence;
 
 import java.util.Date;
+import java.util.List;
 
 public class Group {
 	
@@ -8,9 +9,11 @@ public class Group {
 	private String nameGroup;
 	private Date dateGroup;
 	
-	public Group(int idGroup, String nameGroup, Date dateGroup) {
+	private List<User> users;
+	
+	public Group( String nameGroup, Date dateGroup) {
 
-		this.idGroup = idGroup;
+	
 		this.nameGroup = nameGroup;
 		this.dateGroup = dateGroup;
 	}
@@ -41,6 +44,14 @@ public class Group {
 
 	public void setDateGroup(Date dateGroup) {
 		this.dateGroup = dateGroup;
+	}
+
+	public List<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<User> users) {
+		this.users = users;
 	}
 	
 	

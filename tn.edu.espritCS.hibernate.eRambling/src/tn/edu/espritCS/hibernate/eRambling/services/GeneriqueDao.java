@@ -61,7 +61,8 @@ public abstract class GeneriqueDao <T>{
 	public boolean delete(int idT){
 		boolean b = false;
 		
-		try {
+		try { 
+			T t = find(idT);
 			session.delete(find(idT));
 			b=true;
 			
