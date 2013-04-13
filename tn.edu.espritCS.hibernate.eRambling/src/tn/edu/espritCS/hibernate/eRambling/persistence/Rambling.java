@@ -13,9 +13,9 @@ public class Rambling {
 	public Rambling() {
 		
 	}
-	public Rambling(int idRambling, String destianation) {
+	
+	public Rambling(String destianation) {
 		
-		this.idRambling = idRambling;
 		this.destianation = destianation;
 	}
 	

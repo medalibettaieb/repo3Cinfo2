@@ -1,6 +1,9 @@
 package tn.edu.espritCS.hibernate.eRambling.services;
 
+import java.util.Date;
+
 import tn.edu.espritCS.hibernate.eRambling.persistence.Group;
+import tn.edu.espritCS.hibernate.eRambling.persistence.Rambling;
 import tn.edu.espritCS.hibernate.eRambling.persistence.User;
 
 // TODO: Auto-generated Javadoc
@@ -16,23 +19,6 @@ public class GroupDao extends GeneriqueDao<Group> {
 		super(Group.class);
 	}
 
-	public boolean initDB() {
-		
-		boolean b = false;
-		
-		try {
-			
 
-			
-			User user = new User();
-			
-			b=true;
-			
-		} catch (Exception e) {
-			System.err.println("7awel marra thenya");
-		}
-		
-		return b;				
-	}
 
 }

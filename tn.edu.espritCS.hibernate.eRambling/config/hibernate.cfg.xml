@@ -7,7 +7,7 @@
 		<property name="connection.password"></property>
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
-		<property name="hbm2ddl.auto">create</property>
+		<property name="hbm2ddl.auto">update</property>
 		<property name="transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
 		<!-- thread is the short name for org.hibernate.context.ThreadLocalSessionContext 
 			and let Hibernate bind the session automatically to the thread -->

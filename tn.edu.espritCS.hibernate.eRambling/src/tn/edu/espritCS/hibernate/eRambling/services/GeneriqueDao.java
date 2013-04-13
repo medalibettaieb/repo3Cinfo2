@@ -41,7 +41,7 @@ public abstract class GeneriqueDao <T>{
 		boolean b = false;
 		
 		try {
-			session.update(t);
+			session.merge(t);
 			b=true;
 			
 		} catch (Exception e) {

@@ -7,7 +7,7 @@ public class User {
 	private int idUser;
 	private String firstNameUser;
 	private String lastNameUser;
-	
+
 	private Group group;
 	private List<Rambling> ramblings;
 
@@ -15,10 +15,18 @@ public class User {
 		return idUser;
 	}
 
-
-
 	public void setIdUser(int idUser) {
 		this.idUser = idUser;
+	}
+
+	public User() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public User(String firstNameUser, String lastNameUser) {
+
+		this.firstNameUser = firstNameUser;
+		this.lastNameUser = lastNameUser;
 	}
 
 	public String getFirstNameUser() {
@@ -37,25 +45,17 @@ public class User {
 		this.lastNameUser = lastNameUser;
 	}
 
-
-
 	public Group getGroup() {
 		return group;
 	}
-
-
 
 	public void setGroup(Group group) {
 		this.group = group;
 	}
 
-
-
 	public List<Rambling> getRamblings() {
 		return ramblings;
 	}
-
-
 
 	public void setRamblings(List<Rambling> ramblings) {
 		this.ramblings = ramblings;
