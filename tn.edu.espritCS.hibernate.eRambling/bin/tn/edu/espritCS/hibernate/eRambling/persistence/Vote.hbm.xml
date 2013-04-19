@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 6 avr. 2013 17:37:37 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="tn.edu.espritCS.hibernate.eRambling.persistence.Vote" table="T_VOTE">
+        <id name="idVote" type="int">
+            <column name="IDVOTE" />
+            <generator class="identity" />
+        </id>
+        <property name="state" type="java.lang.String">
+            <column name="STATE" />
+        </property>
+        <many-to-one name="rambling" class="tn.edu.espritCS.hibernate.eRambling.persistence.Rambling" column="FK_RAMBLING"></many-to-one>
+        <many-to-one name="user" class="tn.edu.espritCS.hibernate.eRambling.persistence.User"></many-to-one>
+    </class>
+</hibernate-mapping>

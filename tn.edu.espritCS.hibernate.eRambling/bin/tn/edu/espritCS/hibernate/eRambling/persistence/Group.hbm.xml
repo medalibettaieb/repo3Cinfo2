@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 6 avr. 2013 17:35:02 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="tn.edu.espritCS.hibernate.eRambling.persistence.Group" table="T_GROUP">
+        <id name="idGroup" type="int">
+            <column name="IDGROUP" />
+            <generator class="identity" />
+        </id>
+        <property name="nameGroup" type="java.lang.String">
+            <column name="NAMEGROUP" />
+        </property>
+        <property name="dateGroup" type="java.util.Date">
+            <column name="DATEGROUP" />
+        </property>
+        <bag name="users" cascade="all">
+        
+        <key><column name="FK_GROUP"></column></key>
+        <one-to-many class="tn.edu.espritCS.hibernate.eRambling.persistence.User"/>
+        </bag>
+        
+    </class>
+</hibernate-mapping>
